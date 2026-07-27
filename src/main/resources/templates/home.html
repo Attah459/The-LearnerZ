@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The LearnerZ | Academic Portal</title>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .hero-section { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; padding: 100px 0; border-radius: 24px; }
+        .feature-card { transition: transform 0.2s ease, box-shadow 0.2s ease; border-radius: 16px; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+                <span>🎓</span> The LearnerZ
+            </a>
+            <div class="d-flex gap-2">
+                <a th:href="@{/courses}" class="btn btn-outline-light btn-sm px-3 rounded-pill">View Courses</a>
+                <a th:href="@{/login}" class="btn btn-primary btn-sm px-3 rounded-pill fw-medium">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="hero-section text-center shadow-lg px-4 mb-5">
+            <div class="max-width-md mx-auto">
+                
+                <h1 class="display-4 fw-extrabold mb-3">Your Academic Journey Starts Here</h1>
+                <p class="lead text-slate-300 mx-auto mb-4 style-max-width" style="max-width: 600px; color: #cbd5e1;">
+                    Enroll in advanced modules, monitor program configurations, and interact with instructor assets directly from your unified hub.
+                </p>
+                <a th:href="@{/courses}" class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-semibold shadow">Explore Available Programs</a>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 feature-card p-4 border-0 shadow-sm">
+                    <div class="fs-2 mb-2">📚</div>
+                    <h5 class="fw-bold text-dark">Course Libraries</h5>
+                    <p class="text-muted small mb-0">Browse through academic tracks built directly into your database entities.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 feature-card p-4 border-0 shadow-sm">
+                    <div class="fs-2 mb-2">📝</div>
+                    <h5 class="fw-bold text-dark">Assignment Engine</h5>
+                    <p class="text-muted small mb-0">Submit source code configurations and track grading parameters in real time.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 feature-card p-4 border-0 shadow-sm">
+                    <div class="fs-2 mb-2">📊</div>
+                    <h5 class="fw-bold text-dark">Progress Metrics</h5>
+                    <p class="text-muted small mb-0">Monitor your completed course requirements through a responsive student ledger dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
