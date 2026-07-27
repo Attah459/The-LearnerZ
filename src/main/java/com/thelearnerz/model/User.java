@@ -28,7 +28,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String role; // Standard roles: ROLE_STUDENT, ROLE_INSTRUCTOR, ROLE_ADMIN
+    private String role; 
 
     private LocalDateTime dateCreated;
 
@@ -37,11 +37,11 @@ public class User {
         this.dateCreated = LocalDateTime.now();
     }
 
-    // Default Constructor (Required by JPA)
+    
     public User() {
     }
 
-    // Full Constructor
+    
     public User(String name, String email, String password, String role) {
         this.name = name;
         this.email = email;
