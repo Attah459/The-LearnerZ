@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | The LearnerZ</title>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .reg-card { border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); border: none; }
+        .form-control, .form-select { border-radius: 10px; padding: 12px; border: 1px solid #cbd5e1; }
+    </style>
+</head>
+<body class="d-flex align-items-center vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card reg-card bg-white p-4">
+                    <h4 class="fw-bold mb-2 text-slate-800">Registration Portal</h4>
+                    <p class="text-secondary small mb-4">Create your unified learning system profile credential context.</p>
+                    
+                    <div th:if="${param.error}" class="alert alert-danger rounded-3 py-2.5 small mb-3 border-0" style="background-color: #fef2f2; color: #991b1b;">
+                        ⚠️ That email address is already registered to an account.
+                    </div>
+
+                    <form th:action="@{/registration}" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label small fw-medium text-secondary">Full Name</label>
+                            <input type="text" name="name" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-medium text-secondary">Email Address</label>
+                            <input type="email" name="email" class="form-control" required placeholder="name@learnerz.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-medium text-secondary">Secure Password</label>
+                            <input type="password" name="password" class="form-control" required placeholder="••••••••">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-medium text-secondary">Platform Operational Role</label>
+                            <select name="role" class="form-select" required>
+                                <option value="ROLE_STUDENT">Student Profile</option>
+                                <option value="ROLE_INSTRUCTOR">Instructor Profile</option>
+                                <option value="ROLE_ADMIN">System Administrator</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-3 fw-semibold shadow-sm">Complete Account Registration</button>
+                    </form>
+                </div>
+                <div class="text-center mt-4">
+                    <a th:href="@{/login}" class="text-decoration-none small text-secondary fw-medium">Already have an account? Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
