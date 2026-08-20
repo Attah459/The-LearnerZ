@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: primary-app
+  profiles:
+    active: dev
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    check-template-location: false

@@ -31,11 +31,9 @@ public class MainController {
     @GetMapping("/admin")
     public String adminDashboardPage() { return "admin"; }
 
-    // Serves the dynamic registration template form page view
     @GetMapping("/registration")
     public String registrationPage() { return "registration"; }
 
-    // Processes submission requests, hashes passwords with BCrypt, and saves accounts
     @PostMapping("/registration")
     public String processRegistration(@RequestParam String name,
                                       @RequestParam String email,
@@ -44,7 +42,6 @@ public class MainController {
         if(userRepository.findByEmail(email).isPresent()) {
             return "redirect:/registration?error=exists";
         }
-        
         User newUser = new User(name, email, passwordEncoder.encode(password), role);
         userRepository.save(newUser);
         return "redirect:/login?registered=true";
